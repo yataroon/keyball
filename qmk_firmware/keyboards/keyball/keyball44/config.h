@@ -82,5 +82,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
-## RGB lighting will be switched off when the host goes to sleep
+// RGB lighting will be switched off when the host goes to sleep
 #define RGBLIGHT_SLEEP
