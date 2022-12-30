@@ -81,6 +81,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
-
-// RGB lighting will be switched off when the host goes to sleep
-#define RGBLIGHT_SLEEP
