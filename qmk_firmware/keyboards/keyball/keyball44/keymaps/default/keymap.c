@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GUI_T(KC_TAB)   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_MINS   ,
     LCTL_T(KC_ESC)   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                        KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , KC_QUOT  ,
     KC_LSFT  , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                                        KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_BTN1  ,
-              KC_LALT,LSG(KC_5),  MO(2),LT(1,KC_SPC),MO(3),                  KC_BACKSPACE,GUI_T(KC_ENT), RCTL_T(KC_LANG2),     _______  , TG(1)
+              KC_LALT,LSG(KC_5),  MO(2),LT(1,KC_SPC),MO(3),                  KC_BACKSPACE,GUI_T(KC_ENT), RCTL_T(KC_LNG2),     _______  , TG(1)
   ),
 
   [1] = LAYOUT_universal(
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_TOG  , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                                        KC_F6  , KC_F7  , KC_F8  , KC_F9 , KC_F10 , KC_F11  ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , CPI_I100  , SCRL_DVI ,                                        LCA(KC_LEFT)  , LCA(KC_F)  , LCA(KC_ENT)  , LCA(KC_RIGHT) , KC_KB_VOLUME_UP  , KC_F12  ,
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , CPI_D100  , SCRL_DVD ,                                        LCA(KC_D)  , LCA(KC_E) , LCA(KC_T) , LCA(KC_G)  , KC_KB_VOLUME_DOWN  , _______ ,
-                  _______    , _______  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , _______  , RESET
+                  _______    , _______  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
   ),
 };
 // clang-format on
@@ -68,3 +68,8 @@ void oledkit_render_info_user(void) {
     keyball_oled_render_ballinfo();
 }
 #endif
+
+void pointing_device_init_user(void) {
+    // set_auto_mouse_layer(<mouse_layer>); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
+    set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
+}
