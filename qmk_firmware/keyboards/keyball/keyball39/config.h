@@ -79,3 +79,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_RESYNC_ENABLE
 // #define NO_ACTION_MACRO
 // #define NO_ACTION_FUNCTION
+
+#define HOLD_ON_OTHER_KEY_PRESS
