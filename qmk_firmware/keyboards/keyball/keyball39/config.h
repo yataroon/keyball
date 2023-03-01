@@ -80,8 +80,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_ACTION_MACRO
 // #define NO_ACTION_FUNCTION
 
-#define HOLD_ON_OTHER_KEY_PRESS
+#define IGNORE_MOD_TAP_INTERRUPT
+// #define PERMISSIVE_HOLD
+// #define HOLD_ON_OTHER_KEY_PRESS
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+// #define TAPPING_FORCE_HOLD
+// #define TAPPING_FORCE_HOLD_PER_KEY
+#define COMBO_COUNT 2
 
 // Automatic Mouse Layer
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 #define AUTO_MOUSE_DEFAULT_LAYER 4
+
+#define KEYBALL_CPI_DEFAULT 700
