@@ -19,15 +19,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 #include "quantum.h"
+#include "tapdance.c"
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
   [0] = LAYOUT_universal(
-    GUI_T(KC_Q)     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
+    GUI_T(KC_Q)     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , LALT_T(KC_P)     ,
     LCTL_T(KC_A)     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , RCTL_T(KC_SCLN)  ,
     LSFT_T(KC_Z)     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , RSFT_T(KC_SLSH)  ,
-    LSG(KC_5)  , KC_LALT  , KC_LGUI  ,LT(2, KC_TAB),LT(3,KC_SPC),LT(1, KC_ESC),   LSFT_T(KC_BSPC),GUI_T(KC_ENT),_______,_______,_______, KC_BTN1
+    LSG(KC_5)  , KC_LALT  , KC_LGUI  ,LT(2, KC_TAB),TD(TD_LAYER),LT(1, KC_ESC),   LSFT_T(KC_BSPC),GUI_T(KC_ENT),_______,_______,_______, KC_BTN1
   ),
 
   [1] = LAYOUT_universal(
@@ -45,12 +46,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [3] = LAYOUT_universal(
-    KC_EXLM  , KC_AT, KC_HASH  , KC_DOLLAR  , KC_PERCENT  ,                            KC_CIRCUMFLEX  , KC_AMPERSAND  , KC_ASTERISK  , KC_LEFT_PAREN , KC_RIGHT_PAREN ,
-    HYPR(KC_A)  , KC_LEFT_BRACKET  , KC_RIGHT_BRACKET  , KC_LEFT_CURLY_BRACE  , KC_RIGHT_CURLY_BRACE ,                            KC_LEFT  , KC_DOWN  , KC_UP  , KC_RIGHT  , KC_QUOT ,
-    _______ , _______  , KC_TILDE  , KC_GRAVE  , _______ ,                            _______  , KC_UNDS , KC_MINUS , KC_EQUAL  , KC_BACKSLASH ,
+    KC_EXLM  , KC_AT, KC_HASH  , KC_DOLLAR  , KC_PERCENT  ,                            KC_CIRCUMFLEX  , KC_AMPERSAND  , KC_ASTERISK  , KC_EQUAL , KC_MINUS ,
+    _______  , _______  , TD(TD_LEFT_BRACKET)  , TD(TD_RIGHT_BRACKET)  , KC_RIGHT_CURLY_BRACE ,                            KC_LEFT  , KC_DOWN  , KC_UP  , KC_RIGHT  , TD(TD_QUOTE) ,
+    _______ , _______  , KC_TILDE  , KC_GRAVE  , _______ ,                            HYPR(KC_N)  , KC_LNG2 , KC_LNG1 , KC_UNDS  , TD(TD_BACK_SLASH_PIPE) ,
     _______    , _______  , _______  , _______  , _______  , _______  ,      _______ ,  KC_ESC  , _______  , _______  , _______  , _______
   ),
- 
+
   [4] = LAYOUT_universal(
     _______  , _______  , _______  , _______  , _______  ,                            _______  , _______  , _______  , _______ , _______ ,
     _______  , KC_BTN2  , KC_BTN3  , KC_BTN1  , _______ ,                            _______  , _______  , _______  , _______  , _______ ,
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 // clang-format on
-
+    
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
         case 3:
@@ -92,24 +93,17 @@ void oledkit_render_info_user(void) {
 }
 #endif
 
-const uint16_t PROGMEM ime_off[] = {KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM ime_on[] = {KC_K, KC_J, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(ime_off, KC_LNG2),
-    COMBO(ime_on, KC_LNG1),
-};
- 
  bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case GUI_T(KC_ENT):
             return true;
-        case LT(3,KC_SPC):
+        case TD(TD_LAYER):
             return true;
         case LT(2, KC_TAB):
             return true;
         case LT(1, KC_ESC):
             return true;
         default:
-            return false;
+            return true;
     }
 }
