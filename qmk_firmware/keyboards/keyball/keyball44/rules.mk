@@ -29,7 +29,7 @@ QUANTUM_LIB_SRC += spi_master.c # Optical sensor use SPI to communicate
 MOUSEKEY_ENABLE = no
 
 # Enabled only one of RGBLIGHT and RGB_MATRIX if necessary.
-RGBLIGHT_ENABLE = no        # Enable RGBLIGHT
+RGBLIGHT_ENABLE = yes        # Enable RGBLIGHT
 RGBLIGHT_DRIVER = WS2812
 RGB_MATRIX_ENABLE = no      # Enable RGB_MATRIX (not work yet)
 RGB_MATRIX_DRIVER = WS2812
@@ -48,4 +48,4 @@ SRC += lib/keyball/keyball.c
 SPACE_CADET_ENABLE = no
 MAGIC_ENABLE = no
 
-TAP_DANCE_ENABLE = yes
+# TAP_DANCE_ENABLE = yes
