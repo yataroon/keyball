@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GUI_T(KC_TAB)   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , LALT_T(KC_MINS)   ,
     LCTL_T(KC_ESC)   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                        KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , KC_QUOT  ,
     KC_LSFT  , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                                        KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_BTN1  ,
-              KC_LALT,LSG(KC_5),  LT(2, KC_LNG2), LT(3,KC_SPC),LT(1, KC_LNG1),                  LSFT_T(KC_BSPC),GUI_T(KC_ENT), _______,     _______  , TG(3)
+              KC_LALT,LSG(KC_5),  LT(2, KC_LNG2), LT(3,KC_SPC),LT(1, KC_LNG1),                  LSFT_T(KC_BSPC),GUI_T(KC_ENT), _______,     _______  , DF(5)
   ),
 
   [1] = LAYOUT_universal(
@@ -57,6 +57,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  ,  _______ , KC_BTN2  , KC_BTN3   , KC_BTN1   , _______   ,                                     _______  , _______  , _______    , _______  , _______  , _______  ,
     _______  ,  _______ , _______  , _______ , _______  , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
                   _______  , _______ , _______  ,   _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
+  ),
+
+  [5] = LAYOUT_universal(
+    GUI_T(KC_TAB)  ,  KC_QUOT   ,  KC_COMM   , KC_DOT   , KC_P    , KC_Y    ,                             KC_F    , KC_G    , KC_C    , KC_R    , KC_L   , KC_SLSH   ,
+    LCTL_T(KC_ESC)  ,  KC_A , KC_O  , KC_E   , KC_U   , KC_I   ,                                     KC_D  , KC_H  , KC_T    , KC_N  , KC_S  , KC_MINS  ,
+    KC_LSFT  ,  KC_SCLN , KC_Q  , KC_J , KC_K  , KC_X  ,                                         KC_B  , KC_M  , KC_W  , KC_V  , KC_Z  , _______  ,
+              KC_LALT,LSG(KC_5),  LT(2, KC_LNG2), LT(3,KC_SPC),LT(1, KC_LNG1),                  LSFT_T(KC_BSPC),GUI_T(KC_ENT), _______,     _______  , DF(0)
   ),
 };
 // clang-format on
