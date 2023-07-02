@@ -54,3 +54,8 @@ See each directories for each keyboards in a table above.
 ## How to create your keymap
 
 (to be documented)
+
+## Build Log
+
+* 2023-07-02
+    - Github Actionsの動作テスト
