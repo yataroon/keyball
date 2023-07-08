@@ -25,38 +25,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
   [0] = LAYOUT_universal(
-    GUI_T(KC_TAB)   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , LALT_T(KC_MINS)   ,
-    LCTL_T(KC_ESC)   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                        KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , SCRL_MO  ,
-    KC_LSFT  , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                                        KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_BTN1  ,
-              KC_LALT,LSG(KC_5),  LT(2, KC_LNG2), LT(3,KC_SPC),LT(1, KC_LNG1),                  LSFT_T(KC_BSPC),GUI_T(KC_ENT), _______,     _______  , DF(5)
+    KC_TAB   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_MINS   ,
+    KC_LEFT_CTRL   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                        KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , SCRL_MO  ,
+    KC_LEFT_SHIFT  , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                                        KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_RIGHT_SHIFT  ,
+              KC_LGUI, KC_LALT,  LT(1, KC_BACKSPACE), LCTL_T(KC_LEFT_CTRL), LT(3, KC_DELETE),            KC_BACKSPACE, LT(2, KC_ENTER), _______,     _______  , KC_ESCAPE
   ),
 
   [1] = LAYOUT_universal(
-    RGB_TOG  , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                                        KC_F6  , KC_F7  , KC_F8  , KC_F9 , KC_F10 , KC_F11  ,
-    RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , CPI_I100  , SCRL_DVI ,                                        LCA(KC_LEFT)  , LCA(KC_F)  , LCA(KC_ENT)  , LCA(KC_RIGHT) , KC_KB_VOLUME_UP  , KC_F12  ,
-    RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , CPI_D100  , SCRL_DVD ,                                        LCA(KC_D)  , LCA(KC_E) , LCA(KC_T) , LCA(KC_G)  , _______  , KBC_SAVE ,
-                  _______    , _______  , _______  ,        _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
+    KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  ,                                                   KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12  ,
+    KC_LEFT_CTRL  , _______  , _______  , _______  , _______  , _______ ,                                        LCA(KC_LEFT)  , LCA(KC_F)  , LCA(KC_ENT)  , LCA(KC_RIGHT) , KC_KB_VOLUME_UP  , KC_F12  ,
+    KC_LEFT_SHIFT , _______  , _______  , _______  , _______  , _______ ,                                        LCA(KC_D)  , LCA(KC_E) , LCA(KC_T) , LCA(KC_G)  , _______  , KBC_SAVE ,
+                  KC_LGUI    , KC_LALT  , _______  ,        _______  , _______  ,                         KC_LGUI  , KC_RALT  , _______       , _______  , KC_ESCAPE
   ),
 
   [2] = LAYOUT_universal(
-    KC_TILD  ,_______, _______     , _______    , _______     , _______  ,                                         _______  , KC_KP_7  , KC_KP_8  , KC_KP_9  , _______  , KC_PLUS  ,
-    _______  ,_______, _______     , _______    , _______     , _______  ,                                         _______  , KC_KP_4  , KC_KP_5, KC_KP_6  , KC_LCBR  , KC_RCBR   ,
-    _______  ,_______, _______     , _______    , _______     ,_______,                                        KC_KP_DOT,KC_KP_1, KC_KP_2   ,KC_KP_3,KC_BACKSLASH,_______,
-                  _______, _______, _______  ,         _______  , _______  ,                   _______   , KC_KP_0, _______       , _______  , _______
+    KC_1  ,  KC_2,  KC_3, KC_4    , KC_5     , KC_6  ,                                                      KC_7  , KC_8  , KC_9  , KC_0  , KC_PLUS  , KC_PIPE  ,
+    LSFT(KC_1) , LSFT(KC_2), LSFT(KC_3) , LSFT(KC_4) , LSFT(KC_5) , LSFT(KC_6) ,                                         LSFT(KC_7)  , LSFT(KC_8)  , LSFT(KC_9), LSFT(KC_0)  , LSFT(KC_1)  , LSFT(KC_1)   ,
+    KC_LEFT_SHIFT  ,_______, _______     , _______    , _______     ,_______,                                        KC_KP_DOT,KC_KP_1, KC_KP_2   , KC_KP_3,KC_BACKSLASH, KC_RIGHT_SHIFT,
+                  KC_LGUI, KC_LALT, KC_LEFT_SHIFT  , KC_LEFT_CTRL  , KC_LOCKING_CAPS_LOCK  ,             KC_LGUI   , KC_RALT, _______       , _______  , _______
   ),
 
   [3] = LAYOUT_universal(
     KC_GRV  ,  KC_EXLM   , KC_AT    , KC_HASH   , KC_DOLLAR    , KC_PERCENT    ,                             KC_CIRCUMFLEX    , KC_AMPERSAND    , KC_ASTERISK    , KC_LPRN    , KC_RPRN   , KC_EQL   ,
     _______  ,  _______ , _______  , KC_LBRC   ,  KC_RBRC  , _______   ,                                     KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT  , KC_PIPE  , KC_BSLS  ,
     _______  ,  _______ , _______  , _______ , _______ , _______  ,                                         HYPR(KC_N)  , KC_LCBR  , KC_RCBR  , _______  , _______  , _______  ,
-                  _______  , _______ , _______  ,         _______  , _______  ,                   _______  , KC_ESC  , _______       , _______  , _______
+                  _______  , _______ , _______  ,         _______  , _______  ,                   _______  , KC_ESC  , _______       , _______  , KC_ESCAPE
   ),
 
   [4] = LAYOUT_universal(
     _______  ,  _______   , _______    , _______   , _______    , _______    ,                             _______    , _______    , _______    , _______    , _______   , _______   ,
     _______  ,  _______ , KC_BTN2  , KC_BTN3   , KC_BTN1   , _______   ,                                     _______  , KC_BTN1  , _______    , KC_BTN2  , _______  , _______  ,
     _______  ,  _______ , _______  , _______ , _______  , _______  ,                                         _______  , _______  , _______  , _______  , _______  , _______  ,
-                  _______  , _______ , _______  ,   _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
+                  _______  , _______ , _______  ,   KC_BTN1  , KC_BTN2  ,                   _______  , _______  , _______       , _______  , _______
   ),
 
   [5] = LAYOUT_universal(
