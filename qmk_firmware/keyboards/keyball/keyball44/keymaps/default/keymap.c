@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // 数字・記号レイヤー
   [2] = LAYOUT_universal(
-    KC_1  ,  KC_2,  KC_3,    KC_4    , KC_5     , KC_6  ,                                                              KC_7  , KC_8  , KC_9  , KC_0  , KC_EQL  , KC_JYEN  ,
-    LSFT(KC_1)  , LSFT(KC_2), LSFT(KC_3) , LSFT(KC_4) , LSFT(KC_5) , LSFT(KC_6) ,                                         LSFT(KC_7)  , LSFT(KC_8)  , LSFT(KC_9), ______  , KC_QUOT  , KC_LBRC,
-    KC_LEFT_SHIFT  ,_______, _______     , _______    , _______     ,_______,                                        ______,  KC_RBRC  , KC_NUHS   , ______,  KC_INT1, KC_RIGHT_SHIFT,
+    KC_1  ,  KC_2,  KC_3,    KC_4    , KC_5     , KC_6  ,                                                              KC_7  , KC_8  , KC_9  , KC_0  , KC_EQL  , KC_INT3  ,
+    LSFT(KC_1)  , LSFT(KC_2), LSFT(KC_3) , LSFT(KC_4) , LSFT(KC_5) , LSFT(KC_6) ,                                         LSFT(KC_7)  , LSFT(KC_8)  , LSFT(KC_9), _______  , KC_QUOT  , KC_LBRC,
+    KC_LEFT_SHIFT  ,_______, _______     , _______    , _______     ,_______,                                        _______,  KC_RBRC  , KC_NUHS   , _______,  KC_INT1, KC_RIGHT_SHIFT,
                   KC_LGUI, KC_LALT, KC_LEFT_SHIFT  , KC_RIGHT_CTRL  , KC_GRV  ,             KC_LGUI   , KC_RALT, _______       , _______  , KC_ESCAPE
   ),
 
