@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 #define HOLD_ON_OTHER_KEY_PRESS
+#define TAPPING_TERM 100
 
 // USB Device descriptor parameters
 // #define VENDOR_ID           0x5957      // "YW" = Yowkees

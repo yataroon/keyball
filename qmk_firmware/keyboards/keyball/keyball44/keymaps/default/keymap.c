@@ -25,26 +25,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default
   [0] = LAYOUT_universal(
-    KC_TAB   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_MINS   ,
+    KC_TAB   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_MINUS   ,
     KC_LEFT_CTRL   , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                        KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , SCRL_MO  ,
     KC_LEFT_SHIFT  , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                                        KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_RIGHT_SHIFT  ,
-              KC_LGUI, KC_LALT,  LT(1, KC_BACKSPACE), LCTL_T(KC_SPACE), LT(3, KC_DELETE),            KC_BACKSPACE, LT(2, KC_ENTER), _______,     _______  , KC_ESCAPE
+              KC_LGUI, KC_LALT,  LT(1, KC_BACKSPACE), RCTL_T(KC_SPACE), LT(3, KC_DELETE),            KC_BACKSPACE, LT(2, KC_ENTER), _______,     _______  , KC_ESCAPE
   ),
 
+  // Functionレイヤー
   [1] = LAYOUT_universal(
     KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  ,                                                   KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12  ,
-    LCTL_T(KC_ESC)  , _______  , _______  , _______  , _______  , _______ ,                                        LCA(KC_LEFT)  , LCA(KC_F)  , LCA(KC_ENT)  , LCA(KC_RIGHT) , KC_KB_VOLUME_UP  , KC_F12  ,
-    KC_LEFT_SHIFT , _______  , _______  , _______  , _______  , _______ ,                                        LCA(KC_D)  , LCA(KC_E) , LCA(KC_T) , LCA(KC_G)  , _______  , KBC_SAVE ,
-                  KC_LGUI  , KC_LALT  , _______  ,        _______  , _______  ,                         KC_LGUI  , KC_RALT  , _______       , _______  , KC_ESCAPE
+    LCTL_T(KC_ESC)  , _______  , _______  , _______  , _______  , KC_DELETE ,                                        LCA(KC_RIGHT)  ,  KC_BTN1  , KC_UP    , KC_BTN2 , KC_BTN3  , SCRL_MO  ,
+    KC_LEFT_SHIFT , _______  , _______  , _______  , _______  , KC_BACKSPACE ,                                        LCA(KC_LEFT)  , KC_LEFT  , KC_DOWN  , KC_RIGHT  , _______  , KC_RIGHT_SHIFT ,
+                  KC_LGUI  , KC_LALT  , KC_LEFT_SHIFT  ,   KC_RIGHT_CTRL  , _______  ,                         KC_LGUI  , KC_RALT  , _______     , _______  , KC_ESCAPE
   ),
 
+  // 数字・記号レイヤー
   [2] = LAYOUT_universal(
-    KC_1  ,  KC_2,  KC_3, KC_4    , KC_5     , KC_6  ,                                                      KC_7  , KC_8  , KC_9  , KC_0  , KC_PLUS  , KC_PIPE  ,
-    LCTL_T(KC_ESC) , LSFT(KC_2), LSFT(KC_3) , LSFT(KC_4) , LSFT(KC_5) , LSFT(KC_6) ,                                         LSFT(KC_7)  , LSFT(KC_8)  , LSFT(KC_9), LSFT(KC_0)  , LSFT(KC_1)  , KC_AT,
-    KC_LEFT_SHIFT  ,_______, _______     , _______    , _______     ,_______,                                        KC_KP_DOT,KC_KP_1, KC_KP_2   , KC_KP_3,KC_BACKSLASH, KC_RIGHT_SHIFT,
-                  KC_LGUI, KC_LALT, KC_LEFT_SHIFT  , KC_LEFT_CTRL  , KC_LOCKING_CAPS_LOCK  ,             KC_LGUI   , KC_RALT, _______       , _______  , KC_ESCAPE
+    KC_1  ,  KC_2,  KC_3,    KC_4    , KC_5     , KC_6  ,                                                              KC_7  , KC_8  , KC_9  , KC_0  , KC_EQL  , KC_JYEN  ,
+    LSFT(KC_1)  , LSFT(KC_2), LSFT(KC_3) , LSFT(KC_4) , LSFT(KC_5) , LSFT(KC_6) ,                                         LSFT(KC_7)  , LSFT(KC_8)  , LSFT(KC_9), ______  , KC_QUOT  , KC_LBRC,
+    KC_LEFT_SHIFT  ,_______, _______     , _______    , _______     ,_______,                                        ______,  KC_RBRC  , KC_NUHS   , ______,  KC_INT1, KC_RIGHT_SHIFT,
+                  KC_LGUI, KC_LALT, KC_LEFT_SHIFT  , KC_RIGHT_CTRL  , KC_GRV  ,             KC_LGUI   , KC_RALT, _______       , _______  , KC_ESCAPE
   ),
 
+  // 移動レイヤー
   [3] = LAYOUT_universal(
     KC_GRV  ,  KC_EXLM   , KC_AT    , KC_HASH   , KC_DOLLAR    , KC_PERCENT    ,                             KC_CIRCUMFLEX    , KC_AMPERSAND    , KC_ASTERISK    , KC_LPRN    , KC_RPRN   , KC_EQL   ,
     LCTL_T(KC_ESC)  ,  _______ , _______  , KC_LBRC   ,  KC_RBRC  , _______   ,                                     KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT  , KC_PIPE  , KC_BSLS  ,
@@ -52,6 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_LGUI  , KC_LALT , _______  ,         _______  , _______  ,                   _______  , KC_ESC  , _______       , _______  , KC_ESCAPE
   ),
 
+  // 自動マウスレイヤー
   [4] = LAYOUT_universal(
     KC_TAB  ,  _______   , _______    , _______   , _______    , _______    ,                             _______    , _______    , _______    , _______    , _______   , _______   ,
     LCTL_T(KC_ESC)  ,  _______ , KC_BTN2  , KC_BTN3   , KC_BTN1   , _______   ,                                     LCA(KC_RIGHT)  , KC_BTN1  , KC_UP    , KC_BTN2  , _______  , SCRL_MO  ,
@@ -59,6 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   KC_LGUI  , KC_LALT , _______  ,   KC_BTN1  , KC_BTN2  ,                   _______  , _______  , _______       , _______  , KC_ESCAPE
   ),
 
+  // 予備レイヤー
   [5] = LAYOUT_universal(
     GUI_T(KC_TAB)  ,  KC_QUOT   ,  KC_COMM   , KC_DOT   , KC_P    , KC_Y    ,                             KC_F    , KC_G    , KC_C    , KC_R    , KC_L   , KC_SLSH   ,
     LCTL_T(KC_ESC)  ,  KC_A , KC_O  , KC_E   , KC_U   , KC_I   ,                                     KC_D  , KC_H  , KC_T    , KC_N  , KC_S  , KC_MINS  ,
