@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB  ,  _______   , _______    , _______   , _______    , _______    ,                             _______    , _______    , _______    , _______    , _______   , _______   ,
     LCTL_T(KC_ESC)  ,  _______ , KC_BTN2  , KC_BTN3   , KC_BTN1   , _______   ,                                     LCA(KC_RIGHT)  , KC_BTN1  , KC_UP    , KC_BTN2  , _______  , SCRL_MO  ,
     KC_LEFT_SHIFT  ,  _______ , _______  , _______ , _______  , _______  ,                                         LCA(KC_LEFT)   , KC_LEFT  , KC_DOWN  , KC_RIGHT  , _______  , KC_RIGHT_SHIFT  ,
-                  KC_LGUI  , KC_LALT , _______  ,   KC_BTN1  , KC_BTN2  ,                   _______  , _______  , _______       , _______  , KC_ESCAPE
+                  KC_LGUI  , KC_LALT , _______  ,   _______  , _______  ,                   _______  , _______  , _______       , _______  , KC_ESCAPE
   ),
 
   // 予備レイヤー
